@@ -1,0 +1,99 @@
+var readLineSync = require("readline-sync");
+
+console.log("Welcome to Ozair's \"CRICKET QUIZ\"\n");
+console.log("Please enter options a or b or c. Thank you!!\n");
+
+var score = 0;
+
+var highScores = [{name: "Ozair", score: '10'},
+{name: "Ishaq", score: '8'}]
+
+var questionOne = {
+question: "1.When did India play its First Test Match?\n a.1930\n b.1932\n c.1934 ",
+answer: "b"
+}
+
+var questionTwo = {
+question: "2.Who was the First Batsman ever to score a century for India in Test Cricket?\n a.Sunil Gavaskar\n b.MAK
+Pataudi\n c.Lala Amarnath ",
+answer: "c"
+}
+
+var questionThree = {
+question: "3.How many times did India win the Cricket World Cup?\n a.2\n b.3\n c.4 ",
+answer: "a"
+}
+
+var questionFour = {
+question: "40Which Year India won the Cricket World Cup?\n a.2011\n b.2015\n c.2019 ",
+answer: "a"
+}
+
+var questionFive = {
+question: "5.Who won the ICC Champions Trophy in 2013?\n a.Australia\n b.England\n c.India ",
+answer: "c"
+}
+
+var questionSix = {
+question: "6.How many times did India go up to the Semi Final of ICC World Cup?\n a.4\n b.5\n c.6 ",
+answer: "b"
+}
+
+var questionSeven = {
+question: "7.How many teams participated in the ICC World Cup 2019?\n a.8\n b.9\n c.10 ",
+answer: "b"
+}
+
+var questionEight = {
+question: "8.Which Country was not part of ICC World Cup 2019?\n a.Zimbabwe\n b.Bangladesh\n c.Afghanistan ",
+answer: "a"
+}
+
+var questionNine = {
+question: "9.Which Cricket Team has won the most ICC Cricket World Cup?\n a.West Indies\n b.India\n c.Australia ",
+answer: "c"
+}
+
+var questionTen = {
+question: "10.With which Country did India play its First Test Match?\n a.England\n b.Pakistan\n c.Australia ",
+answer: "a"
+}
+
+var listOfQuestions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven,
+questionEight, questionNine, questionTen ];
+
+
+showHighScores();
+console.log("FYI: Press cmd / ctrl + c to quit\n");
+
+function play(question, answer) {
+    var userAnswer = readLineSync.question(question);
+    if(userAnswer.toUpperCase() === answer.toUpperCase()){
+        console.log("Correct!");
+        score = score + 1;
+    }
+    else{
+        console.log("Wrong!");
+    }
+    console.log("Current score: " + score);
+    console.log("--------------");
+}
+
+function playGame() {
+    for(let i=0; i<listOfQuestions.length; i++) { 
+        var currentQuestion = listOfQuestions[i]; 
+        play(currentQuestion.question,currentQuestion.answer); 
+    }
+    console.log("Yay! Congratulations you scored " + score + " \n"); 
+}
+
+function showHighScores() { 
+    console.log("Current highscores : " );
+	for(let i=0; i<highScores.length; i++) {
+		console.log(highScores[i].name + " : " + highScores[i].score);
+	}
+	console.log(" If you scored more than highest scorers ping me. \n"); 
+}
+
+playGame(); 
+showHighScores();
