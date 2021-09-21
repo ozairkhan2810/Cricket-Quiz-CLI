@@ -1,4 +1,4 @@
-# mark 2 & 3 - CLI App 
+# Cricket Quiz CLI
 
 A CLI based interactive quiz game build using nodeJs, which checks how well do you know about Cricket.
 
@@ -6,7 +6,7 @@ A CLI based interactive quiz game build using nodeJs, which checks how well do y
 
 ## How to Use
 
-* Play quiz and enter the options in terminal.
+* Play quiz by entering the options in terminal.
 
 ## Tech Stack
 
